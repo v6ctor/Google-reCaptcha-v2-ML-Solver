@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "reCAPTCHA Solver",
+  "version": "2.0.0",
+  "description": "Automatically solves image reCAPTCHAs via a local ML server.",
+
+  "permissions": ["scripting", "storage"],
+  "host_permissions": [
+    "https://*.google.com/*",
+    "http://127.0.0.1:5000/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "all_frames": false,
+      "run_at": "document_idle"
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "reCAPTCHA Solver"
+  }
+}

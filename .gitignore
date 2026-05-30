@@ -1,0 +1,23 @@
+# Dataset
+data-collection/images/
+data-collection/rejected/
+
+# Model weights
+*.pt
+*.onnx
+
+# Sensitive
+proxies.txt
+session.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Misc
+.DS_Store
+Thumbs.db
